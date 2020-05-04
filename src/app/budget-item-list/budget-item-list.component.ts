@@ -24,20 +24,20 @@ export class BudgetItemListComponent implements OnInit {
   }
 
   onCardClicked(item: BudgetItem) {
-    let dialogRef = this.dialog.open(EditItemModalComponent, {
+    const dialogRef = this.dialog.open(EditItemModalComponent, {
       width: '580px',
       data: item
-    })
+    });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result) {
+      if (result) {
         // this.budgetItems[this.budgetItems.indexOf(item)] = result;
         this.update.emit({
           old: item,
           new: result
         });
       }
-    })
+    });
 
 
   }

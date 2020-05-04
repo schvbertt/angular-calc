@@ -17,7 +17,7 @@ export class AddItemFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(this.item) {
+    if (this.item) {
       this.isNewItem = false;
     } else {
       this.isNewItem = true;

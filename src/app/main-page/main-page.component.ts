@@ -10,7 +10,7 @@ import { UpdateEvent } from '../budget-item-list/budget-item-list.component';
 export class MainPageComponent implements OnInit {
 
   budgetItems: BudgetItem[] = new Array<BudgetItem>();
-  totalBudget: number = 0;
+  totalBudget = 0;
 
   constructor() { }
 
@@ -23,7 +23,7 @@ export class MainPageComponent implements OnInit {
   }
 
   deleteItem(item: BudgetItem) {
-    let index = this.budgetItems.indexOf(item);
+    const index = this.budgetItems.indexOf(item);
     this.budgetItems.splice(index, 1);
     this.totalBudget -= item.amount;
   }
